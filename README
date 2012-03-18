@@ -1,0 +1,33 @@
+Redmine file uploader
+
+SUMMARY
+While the REST API of Redmine 1.3.x and earlier don't provide a way to upload
+files in the 'Files' section of a project, I created this script. It can be
+useful in automatic upload of builds as part of implementing continuous
+integration.
+This script should become obsolete once this feature is included in the REST
+API of Redmine. Please refer to http://www.redmine.org/issues/7725 for the
+feature request in the Redmine tracker. 
+
+COMPATIBILITY
+Tested using ...:
+ - Python v2.6, v2.7
+ - mechanize for Python v0.1.11 - http://wwwsearch.sourceforge.net/mechanize/
+ - Redmine v1.3.0, v1.3.1
+
+HELP
+Usage of the tool is explained by invoking it with --help, i.e.:
+  ./upload_file_to_redmine.py --help
+
+EXAMPLES
+$ ./upload_file_to_redmine.py -f myfile.bin -d "some description" \
+   -l "https://redmine.example.net/" -p prjid -u someuser \
+   -w some_password
+
+TODO
+ - Ability to use a config file and overriding using command line arguments.
+ - Provide password on the stdin instead as an argument as this is a security
+   flaw - everyone on the system can read the process table.
+
+AUTHOR
+Gert van Dijk - gertvdijk@gmail.com
