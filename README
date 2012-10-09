@@ -29,5 +29,9 @@ TODO
  - Provide password on the stdin instead as an argument as this is a security
    flaw - everyone on the system can read the process table.
 
+SEE ALSO
+ - infdot_upload: A Redmine plugin to automate release file management.
+   https://github.com/rla/redmine_infdot_upload
+
 AUTHOR
 Gert van Dijk - gertvdijk@gmail.com
