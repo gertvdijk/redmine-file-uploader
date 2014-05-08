@@ -139,7 +139,7 @@ class RedmineFileUploader(object):
 
     def populate_form(self):
         self.debugout('Registering the file')
-        self.browser.select_form(predicate=lambda f: 'action' in f.attrs and f.attrs['action'].endswith('/projects/' + self.project_id + '/files'))
+        self.browser.select_form(predicate=lambda f: 'action' in f.attrs and f.attrs['action'].lower().endswith('/projects/' + self.project_id.lower() + '/files'))
         self.browser.add_file(self.the_file, self.content_type, self.description)
         #br["version_id"]= ["44"]
     
